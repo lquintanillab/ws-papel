@@ -1,0 +1,52 @@
+.direccion-contenedor {
+    margin-top: 6rem;
+    background-color: #EDF0F1;
+    height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.enlace-form {
+    color: gray;
+    font-size: 1.5rem;
+}
+
+.enlace-form:hover {
+    color: var(--textFont);
+    cursor: pointer;
+}
+
+.validacion-cp {
+    display: flex;
+    margin-left: 11rem;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.validacion-cp p {
+    font-size: 1.2rem;
+    text-decoration: underline;
+}
+
+.validacion-cp p:hover {
+    cursor: pointer;
+}
+
+.select-colonia {
+    width: 70%;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: gray;
+    background-color: transparent;
+    border: 1px solid var(--accent4);
+    border-radius: 2rem;
+    padding: .7rem;
+    font-size: 1.2rem;
+    outline: none;
+}
+
+.direccion-actions {
+    display: flex;
+    justify-content: space-between;
+}

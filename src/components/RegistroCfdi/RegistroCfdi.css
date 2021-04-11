@@ -1,0 +1,49 @@
+.reg-btn {
+    position: relative;
+    top: 0px;
+    left: 70px;
+    color: white;
+    padding: 0 25px;
+    background-color: #e80033;
+    text-align: center;
+    vertical-align: middle;
+    display: inline-block;
+    border-radius: 3px;
+}
+
+.reg-btn1 {
+    display: table;
+    height: 28px;
+}
+
+.reg-btn2 {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.reg-btn3 {
+    font-family: Ubuntu, Helvetica;
+    display: inline-block;
+    text-align: center;
+    font-size: 13px;
+    vertical-align: middle;
+}
+
+.mail {
+    display: block;
+    width: 45px;
+    height: 45px;
+    border-radius: 50px;
+    font-size: 20px;
+    color: #fff;
+    line-height: 60px;
+    text-align: center;
+    background-color: #f2142b;
+    background-image: url(../../assets/forward-24.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    float: left;
+    margin-left: 20px;
+    margin-top: 10px;
+}

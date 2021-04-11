@@ -1,0 +1,24 @@
+.boton-link-full {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 2rem auto;
+    width: 50%;
+    padding: .5rem;
+    border-radius: 2rem;
+    border: 1px solid var(--primario);
+    color: white;
+    background-color: var(--accent4);
+}
+
+.boton-link-full:focus {
+    outline: none;
+    background: none;
+}
+
+.boton-link-full:hover {
+    outline: none;
+    cursor: pointer;
+    background-color: var(--blanco);
+    color: var(--accent4);
+}

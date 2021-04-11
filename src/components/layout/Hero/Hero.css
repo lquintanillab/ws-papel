@@ -1,0 +1,24 @@
+.site-header.inicio {
+    background-image: url('../../../assets/756.svg');
+    /* background-image: url('https://firebasestorage.googleapis.com/v0/b/e-commerce-34722.appspot.com/o/impresion.png?alt=media&token=5c807d17-d3ae-4c0f-a798-d951400b0e9e'); */
+    background-attachment: fixed;
+    /* Sirve para dejar fijo el backgrond y hacer el efecto parallax*/
+    background-position: center top;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    min-height: 30rem;
+}
+
+@media screen and (max-width: 900px) {
+    .site-header.inicio {
+        background-image: url('../../../assets/755.svg');
+        /*  background-attachment: fixed; */
+        /* Sirve para dejar fijo el backgrond y hacer el efecto parallax*/
+        background-position: center top;
+        background-size: cover;
+        height: 50vh;
+        max-width: 100%;
+        margin-top: 4.8rem;
+    }
+}

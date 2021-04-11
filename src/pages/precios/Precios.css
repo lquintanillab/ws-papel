@@ -1,0 +1,40 @@
+.contenedor-precios {
+    margin-top: 6rem;
+}
+
+.contenedor-columns {
+    display: flex;
+    flex-direction: row;
+}
+
+.contenedor-column {
+    margin: 0;
+    padding: 0;
+    background-position: center top;
+    background-size: cover;
+    width: 50%;
+    height: auto;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor-column1 {
+    background-image: url('../../assets/cajasbox2.jpeg');
+}
+
+.contenedor-column2 {
+    background-image: url('../../assets/hero2.jpg');
+}
+
+@media screen and (max-width: 800px) {
+    .contenedor-columns {
+        flex-direction: column;
+    }
+    .contenedor-column {
+        width: 100%;
+        height: auto;
+        min-height: 50vh;
+    }
+}

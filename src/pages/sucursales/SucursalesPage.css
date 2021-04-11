@@ -1,0 +1,8 @@
+.sucursales-contenedor {
+    margin-top: 6rem;
+    display: block;
+}
+
+.sucursal-item:hover {
+    cursor: pointer;
+}

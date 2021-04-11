@@ -1,0 +1,57 @@
+.card-md-icon {
+    font-family: 'Nunito', sans-serif;
+    margin-bottom: 5rem;
+    height: 15rem;
+    width: 40rem;
+    border-radius: .4rem;
+    background: #fff;
+    box-shadow: 0 .6rem 1rem rgba(0, 0, 0, .08), 0 0 .6rem rgba(0, 0, 0, .05);
+    transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
+    padding: .5rem 8rem 1.8rem 1rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-around;
+}
+
+.card-md-icon:hover {
+    transform: scale(1.05);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, .12), 0 .4rem .8rem rgba(0, 0, 0, .06);
+}
+
+.text-md-icon h3 {
+    font-weight: 400;
+}
+
+.text-md-icon p {
+    font-size: 1.5rem;
+}
+
+.card-md-icon .icono-card-md {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-md-icon .icono-card-md i {
+    color: var(--accent4);
+    font-size: 4rem;
+}
+
+.card-md-img {
+    color: var(--accent4);
+    font-weight: 600;
+    font-size: 2rem;
+    position: absolute;
+    top: 2rem;
+    right: 1.5rem;
+    max-height: 12rem;
+}
+
+
+/* .card-md-icon {
+    background-image: url(https://ionicframework.com/img/getting-started/ionic-native-card.png);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 7rem;
+} */

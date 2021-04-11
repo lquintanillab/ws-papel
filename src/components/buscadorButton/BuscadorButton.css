@@ -1,0 +1,14 @@
+.boton-redirect-buscador {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: var(--accent1);
+    height: 3rem;
+    border-bottom: 1px solid;
+}
+
+.boton-redirect-buscador:hover {
+    cursor: pointer;
+    z-index: 100;
+    font-size: 2rem;
+}

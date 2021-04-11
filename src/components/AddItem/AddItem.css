@@ -1,0 +1,42 @@
+.add-item {
+    width: 30%;
+    min-width: 25rem;
+    max-width: 30rem;
+    height: 25rem;
+    border-radius: .6rem;
+    background: #fff;
+    border: 2px dashed var(--accent);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem;
+}
+
+.add-item:hover {
+    cursor: pointer;
+}
+
+.add-item-texto {
+    font-family: 'Nunito', sans-serif;
+    text-align: center;
+    color: #767676;
+    font-size: 2rem;
+}
+
+.add-item-icono {
+    color: var(--accent);
+    font-size: 4rem;
+}
+
+@media screen and (max-width:700px) {
+    .add-item {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:900px) {
+    .add-item {
+        width: 50%;
+    }
+}

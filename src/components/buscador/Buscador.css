@@ -1,0 +1,22 @@
+.buscador {
+    width: 70%;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: gray;
+}
+
+.input-buscador {
+    outline: none;
+    border: none;
+    border-bottom: 2px solid lightgray;
+    width: 90%;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: gray;
+    text-align: center;
+}
+
+.input-buscador:focus::placeholder {
+    color: white;
+}

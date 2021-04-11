@@ -1,0 +1,9 @@
+.buscador-productos {
+    display: flex;
+    padding: 0 3rem;
+}
+
+.input-buscador-productos {
+    margin: 0 1rem;
+    text-align: center;
+}

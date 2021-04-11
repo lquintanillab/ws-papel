@@ -1,0 +1,142 @@
+.logo-papel {
+    margin: .1rem 1.2rem;
+    max-height: 4.8rem;
+}
+
+.navbar {
+    overflow: hidden;
+    background-color: var(--primario);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 6rem;
+    z-index: 3000;
+}
+
+.navbar a {
+    color: white;
+    text-align: center;
+    padding: 2rem;
+}
+
+.sticky-fixed {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    transition: top 0.4s;
+}
+
+.sticky-fixed+.content {
+    padding-top: 80px;
+}
+
+.navbar-hiden {
+    position: fixed;
+    /* Make it stick/fixed */
+    top: -10rem;
+    /* Hide the navbar 100 px outside of the top view */
+    width: 100%;
+    /* Full width */
+    transition: top 0.4s;
+}
+
+.navegacion {
+    display: flex;
+}
+
+.navegacion li {
+    list-style-type: none;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: white;
+    text-decoration: none;
+    margin-right: 1rem;
+}
+
+.navegacion a {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+.navegacion a:hover {
+    text-decoration: underline;
+    /* color: #14D4A5; */
+    color: var(--accent);
+}
+
+.navegacion i:hover {
+    color: var(--accent);
+    cursor: pointer;
+}
+
+.navegacion a:last-of-type {
+    margin-right: 0;
+}
+
+.navegacion-hide {
+    display: none;
+}
+
+.icon-bar {
+    color: white;
+    font-size: 2rem;
+    margin-right: 2rem;
+    font-weight: lighter;
+}
+
+.menu-display {
+    position: fixed;
+    top: 4.8rem;
+    right: 0;
+    z-index: 100;
+    background-color: var(--primario);
+    width: 20rem;
+    text-align: center;
+    color: white;
+    font-size: 1.6rem;
+    z-index: 3000;
+}
+
+.menu-display ul li {
+    list-style-type: none;
+    /*border-bottom: solid 1px lightgray;*/
+}
+
+.menu-display a {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: white;
+    text-decoration: none;
+    margin: 0 1rem;
+}
+
+.menu-display a:hover {
+    text-decoration: underline;
+    /* color: #14D4A5; */
+    color: var(--accent);
+}
+
+ul li a {
+    font-size: 1.1rem;
+    color: #343a40;
+}
+
+ul li a.cart:hover {
+    text-decoration: none;
+    color: #d60e96;
+}
+
+ul li a.cart .cart-basket {
+    font-size: .6rem;
+    position: absolute;
+    top: -6px;
+    right: -5px;
+    width: 15px;
+    height: 15px;
+    color: #fff;
+    background-color: #418deb;
+    border-radius: 50%;
+}

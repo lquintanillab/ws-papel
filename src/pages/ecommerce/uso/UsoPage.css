@@ -1,0 +1,52 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80vw;
+    margin: 1rem auto;
+}
+
+.titulo-uso {
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    /* font-family: 'M PLUS Rounded 1c', sans-serif; */
+    font-weight: 800;
+    font-size: 2.5rem;
+    color: var(--accent4);
+}
+
+.contenedor-uso {
+    width: 90%;
+    margin: 1rem auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.descripcion-uso {
+    margin-top: 0;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: gray;
+}
+
+@media screen and (min-width: 500px) {
+    .titulo-uso {
+        font-size: 4rem;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .titulo-uso {
+        font-size: 4rem;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .contenedor-uso {
+        width: 100%;
+    }
+}

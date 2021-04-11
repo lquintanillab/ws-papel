@@ -1,0 +1,27 @@
+.back-button {
+    font-family: 'Nunito', sans-serif;
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 2rem auto;
+    width: 30rem;
+    height: 5rem;
+    padding: .5rem;
+    border-radius: 5rem;
+    color: gray;
+    background-color: #ffffff;
+    border: 1px solid var(--accent4);
+}
+
+.back-button:focus {
+    outline: none;
+    background: none;
+}
+
+.back-button:hover {
+    outline: none;
+    cursor: pointer;
+    color: white;
+    background-color: var(--accent4);
+}
+
+@media screen and (max-width: 700px) {}

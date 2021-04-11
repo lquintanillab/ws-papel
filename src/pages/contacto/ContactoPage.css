@@ -1,0 +1,45 @@
+.contacto-contenedor {
+    margin-top: 6rem;
+}
+
+.formulario {
+    background-color: #EDF0F1;
+    height: 75vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.banner-contacto {
+    height: 100%;
+    width: auto;
+}
+
+.link-sucursales {
+    text-align: center;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    color: var(--accent1);
+    font-size: 2rem;
+    height: 5rem;
+}
+
+@media screen and (max-width: 1200px) {
+    .formulario {
+        height: 50vh;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+    .banner-contacto {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .formulario {
+        height: 100vh;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+}

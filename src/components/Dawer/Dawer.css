@@ -1,0 +1,26 @@
+.dawer {
+    display: inline-block;
+    position: fixed;
+    width: 0px;
+    height: 100%;
+    background-color: whitesmoke;
+    top: 0;
+    left: 0;
+    transition: width .5s;
+}
+
+.close-dawer {
+    font-size: 2rem;
+    position: absolute;
+    color: var(--primario);
+    top: 5rem;
+    right: 2rem;
+    z-index: 1;
+}
+
+.calculadora {
+    position: absolute;
+    top: 6rem;
+    right: 0;
+    font-size: 1.5rem;
+}

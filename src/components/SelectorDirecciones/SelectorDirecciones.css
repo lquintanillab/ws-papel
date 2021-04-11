@@ -1,0 +1,13 @@
+.selector-direcciones {
+    text-align: center;
+    outline: none;
+    border-radius: 12px;
+    border-color: var(--accent1);
+    color: gray;
+    background-color: transparent;
+}
+
+.selector-direcciones :active {
+    color: red;
+    background-color: transparent;
+}

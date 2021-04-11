@@ -1,0 +1,59 @@
+.contenedor-item {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagen-item {
+    width: 100%;
+    height: auto;
+}
+
+.nombre-item {
+    text-align: center;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    color: var(--accent1);
+    font-size: 2rem;
+    height: 5rem;
+}
+
+.descripcion-item {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    text-align: center;
+    color: var(--text);
+    font-size: 1.5rem;
+    font-weight: medium;
+    height: auto;
+}
+
+.divisor {
+    width: 90%;
+    border: none;
+    background-color: lightgray;
+    height: 1px;
+}
+
+@media screen and (min-width: 600px) {
+    .contenedor-item {
+        width: 50%;
+    }
+    .imagen-item {
+        width: 70%;
+        height: auto;
+    }
+    .descripcion-item {
+        height: 15rem;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .contenedor-item {
+        width: 30%;
+    }
+    .descripcion-item {
+        height: auto;
+    }
+}

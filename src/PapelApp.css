@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap');
+:root {
+    /*--primario: #394859;*/
+    /*--primario: #e80033;*/
+    --primario: #F2142B;
+    --accent: #C6CED3;
+    --accent1: #E80033;
+    --accent2: #007891;
+    --accent3: #55B7D3;
+    --accent4: #ed385f;
+    --light: #F2F3F5;
+    --red: #EC5252;
+    --text: #767C7D;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    /* 62.5% de 16px es igual a 10px*/
+    ;
+}
+
+body {
+    font-family: Lato, sans-serif;
+    /* font-family: 'Lato', sans-serif;
+    font-family: 'Quicksand', sans-serif;
+    font-family: 'Roboto', sans-serif; */
+    line-height: 2;
+}
+
+h1 {
+    font-size: 3.8rem;
+}
+
+h2 {
+    font-size: 3.4rem;
+}
+
+h3 {
+    font-size: 3rem;
+}
+
+h4 {
+    font-size: 2.6rem;
+}
+
+.parent {
+    transition: margin .5s;
+}
+
+
+/* Tools */
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+
+/**/
+
+.fab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5rem;
+    height: 5rem;
+    background-color: #F2142B;
+    border-radius: 50%;
+    /*  box-shadow: 0 .6rem 1rem 0 #666; */
+    font-size: 2rem;
+    line-height: 3.7rem;
+    color: white;
+    position: fixed;
+    right: 3rem;
+    bottom: 10rem;
+    transition: all 0.1s ease-in-out;
+    z-index: 1000;
+}
+
+.fab:hover {
+    /* box-shadow: 0 .6rem 1.4rem 0 #666; */
+    transform: scale(1.05);
+}
+
+
+/*
+ChatBot
+*/
+
+.chatbot {
+    position: fixed;
+    right: 3rem;
+    bottom: 25rem;
+}

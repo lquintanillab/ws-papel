@@ -1,0 +1,35 @@
+.iconos-nosotros {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.icono {
+    flex-basis: calc(33.3% - 1rem);
+    text-align: center;
+}
+
+.icono h3 {
+    text-transform: uppercase;
+    color: #E08709;
+}
+
+.descripcion-icono {
+    margin-top: 0;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: gray;
+}
+
+@media screen and (max-width: 500px) {
+    .icono h3 {
+        flex-basis: calc(50% -1rem);
+        font-size: 2rem;
+    }
+    .homePage {
+        margin-top: 6rem;
+    }
+}

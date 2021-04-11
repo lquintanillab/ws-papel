@@ -1,0 +1,18 @@
+.selector-options {
+    text-align: center;
+    outline: none;
+    border-radius: 12px;
+    border-color: var(--accent1);
+    color: gray;
+    background-color: transparent;
+    display: inline-block;
+    margin: 0.5rem .5rem;
+    width: 20rem;
+    max-width: 30rem;
+    padding: .2rem;
+}
+
+.selector-options:active {
+    color: red;
+    background-color: transparent;
+}

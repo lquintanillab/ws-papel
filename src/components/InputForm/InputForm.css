@@ -1,0 +1,51 @@
+.campo-form {
+    display: flex;
+    margin-bottom: 1rem;
+    align-items: center;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size: 1.2rem;
+    color: var(--primario);
+}
+
+.campo-form:last-of-type {
+    margin: 0;
+}
+
+.campo-form label {
+    flex: 0 0 100px;
+    font-family: var(--textFont);
+}
+
+.campo-form input[type="password"],
+.campo-form input[type="email"],
+.campo-form input[type="tel"],
+.campo-form input[type="text"] {
+    border: 1px solid var(--accent4);
+    border-radius: 2rem;
+    padding: .7rem;
+    font-size: 1.2rem;
+    flex: 1;
+}
+
+.campo-form input {
+    outline: none;
+    background: none;
+}
+
+@media screen and (max-width: 1200px) {
+    .campo-form {
+        margin-bottom: .5rem;
+    }
+    .campo-form label {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .campo-form {
+        margin-bottom: .3rem;
+    }
+    .campo-form label {
+        display: none;
+    }
+}

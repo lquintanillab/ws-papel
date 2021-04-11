@@ -1,0 +1,30 @@
+.producto-checkout-container {
+    font-size: 1.2rem;
+    border-top: 1px solid var(--accent);
+    margin-bottom: .5rem;
+}
+
+.producto-descripcion {
+    margin-left: .5rem;
+}
+
+.producto-checkout-datos {
+    display: flex;
+    margin-left: 1rem;
+}
+
+.producto-checkout-propiedad {
+    width: 25%;
+    text-align: center;
+    display: flex;
+}
+
+@media all and (max-width: 480px) {
+    .producto-checkout-container {
+        font-size: .9rem;
+        align-items: center;
+    }
+    .producto-checkout-propiedad {
+        flex-direction: column;
+    }
+}

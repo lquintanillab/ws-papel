@@ -1,0 +1,41 @@
+.campo-form {
+    display: flex;
+    margin-bottom: 1rem;
+    align-items: center;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size: 1.2rem;
+    color: var(--primario);
+}
+
+.campo-form:last-of-type {
+    margin: 0;
+}
+
+.campo-form input {
+    outline: none;
+    background: none;
+}
+
+.boton-submit {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 1rem auto;
+    width: 50%;
+    padding: .5rem;
+    border-radius: 2rem;
+    color: gray;
+    border: 1px solid var(--accent4);
+}
+
+.boton-submit:focus {
+    outline: none;
+    background: none;
+}
+
+.boton-submit:hover {
+    outline: none;
+    cursor: pointer;
+    color: white;
+    background-color: var(--accent4);
+}

@@ -1,0 +1,35 @@
+.input-alone {
+    display: flex;
+    align-items: center;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    color: var(--primario);
+    width: 30%;
+}
+
+.input-alone input[type="password"],
+.input-alone input[type="email"],
+.input-alone input[type="tel"],
+.input-alone input[type="text"] {
+    border: 1px solid var(--accent4);
+    border-radius: 2rem;
+    padding: .7rem;
+    font-size: 1.2rem;
+}
+
+.input-alone input {
+    outline: none;
+    background: none;
+}
+
+
+/* @media screen and (max-width: 1200px) {
+    .input-alone {
+        margin-bottom: .5rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .input-alone {
+        margin-bottom: .3rem;
+    }
+} */

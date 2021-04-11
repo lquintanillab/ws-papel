@@ -1,0 +1,23 @@
+.boton-primary {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 2rem auto;
+    width: 50%;
+    padding: .5rem;
+    border-radius: 2rem;
+    color: gray;
+    border: 1px solid var(--accent4);
+}
+
+.boton-primary:focus {
+    outline: none;
+    background: none;
+}
+
+.boton-primary:hover {
+    outline: none;
+    cursor: pointer;
+    color: white;
+    background-color: var(--accent4);
+}

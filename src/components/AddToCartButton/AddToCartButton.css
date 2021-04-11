@@ -1,0 +1,26 @@
+.boton-cart {
+    display: flex;
+    align-items: center;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+.boton-cart button {
+    border-radius: 2rem;
+    color: gray;
+    padding: .7rem;
+    border: 1px solid var(--accent4);
+    background: none;
+    font-size: 1.2rem;
+}
+
+.boton-cart button:focus {
+    outline: none;
+    background: none;
+}
+
+.boton-cart button:hover {
+    outline: none;
+    cursor: pointer;
+    color: white;
+    background-color: var(--accent4);
+}

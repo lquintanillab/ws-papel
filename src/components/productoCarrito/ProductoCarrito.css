@@ -1,0 +1,91 @@
+.prod-container {
+    display: flex;
+    margin: auto;
+    height: 8rem;
+    border: 1px solid #e1e0dd;
+    justify-content: space-between;
+    width: 60%;
+}
+
+.prod-image {
+    width: 15%;
+    text-align: center;
+    position: relative;
+    top: 40%;
+    color: lightgray;
+}
+
+.prod-datos {
+    width: 45%;
+    font-size: 1.2rem;
+}
+
+.prod-cantidad {
+    width: 15%;
+    align-self: center;
+    font-size: 1.3rem;
+    margin: 0 1rem;
+}
+
+.prod-precio {
+    width: 10%;
+    align-self: center;
+    font-size: 1.3rem;
+}
+
+.prod-importe {
+    width: 10%;
+    align-self: center;
+    font-size: 1.3rem;
+}
+
+.prod-remove {
+    width: 5%;
+    align-self: center;
+    font-size: 2rem;
+    color: gray;
+}
+
+.prod-remove:hover {
+    color: var(--accent1);
+}
+
+@media all and (max-width: 800px) {
+    .prod-container {
+        width: 80%;
+    }
+    .prod-datos {
+        font-size: 1rem;
+    }
+    .prod-cantidad {
+        font-size: 1rem;
+    }
+    .prod-precio {
+        font-size: 1rem;
+    }
+    .prod-importe {
+        font-size: 1rem;
+    }
+}
+
+@media all and (max-width: 480px) {
+    .prod-container {
+        width: 95%;
+    }
+    .prod-datos {
+        font-size: .7rem;
+    }
+    .prod-cantidad {
+        font-size: .7rem;
+    }
+    .prod-precio {
+        font-size: .7rem;
+    }
+    .prod-importe {
+        font-size: .7 rem;
+    }
+    .prod-remove {
+        padding-left: .4rem;
+        font-size: 1.3rem;
+    }
+}

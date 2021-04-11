@@ -1,0 +1,68 @@
+.content-buscador {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90vw;
+    margin: 1rem auto;
+}
+
+.titulo-buscador {
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    /* font-family: 'M PLUS Rounded 1c', sans-serif; */
+    font-weight: 800;
+    font-size: 3rem;
+    color: var(--accent4);
+    margin-top: 2rem;
+}
+
+.descripcion-buscador {
+    margin-top: 0;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: gray;
+}
+
+.buscador-productos-container {
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.buscador-selectors-group {}
+
+.content-selectors {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.buttons-selectors {
+    display: flex;
+    justify-content: center;
+}
+
+.buttons-selectors button {
+    display: inline-block;
+    margin: 1rem 2rem;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size: 1.5rem;
+    width: 10%;
+    padding: .5rem;
+    border-radius: 2rem;
+    color: gray;
+    border: 1px solid var(--accent4);
+    outline: none;
+}
+
+.buttons-selectors button:hover {
+    outline: none;
+    cursor: pointer;
+    color: white;
+    background-color: var(--accent4);
+}

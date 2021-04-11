@@ -1,0 +1,157 @@
+.checkout-container {
+    width: 80%;
+    margin: 2rem auto;
+    display: grid;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+.checkout-pedido {
+    display: flex;
+}
+
+.checkout-productos {
+    width: 60%;
+    margin-right: 1rem;
+}
+
+.checkout-datos {
+    display: flex;
+    border: solid 1px var(--accent);
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    min-height: 19rem;
+    align-items: flex-start;
+}
+
+.direccion-envio-datos {
+    font-size: 1.2rem;
+    margin-left: 3rem;
+}
+
+.direccion-envio-header {
+    display: flex;
+    font-size: 1rem;
+    margin-right: 2rem;
+    font-weight: 700;
+}
+
+.direccion-envio-header p {
+    font-size: 1.3rem;
+    margin-right: 1rem;
+}
+
+.checkout-productos-detalle {
+    padding: 1rem;
+    border: solid 1px var(--accent);
+    border-radius: 5px;
+}
+
+.checkout-right {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.checkout-resumen,
+.checkout-entrega {
+    padding: 1rem;
+    width: 100%;
+    border: solid 1px var(--accent);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-height: 33rem;
+    margin-bottom: 1rem;
+}
+
+.checkout-resumen-header,
+.checkout-entrega-header,
+.productos-detalle-header {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.checkout-totales {
+    font-size: 1.5rem;
+}
+
+.checkout-totales p {
+    font-size: 1.5rem;
+}
+
+.checkout-importe {
+    display: flex;
+}
+
+.checkout-importe-label {
+    width: 10rem;
+    text-align: left;
+}
+
+.checkout-importe-valor {
+    width: 8rem;
+    text-align: right;
+}
+
+.checkout-pagar {
+    width: 80%;
+    margin: .5rem auto;
+}
+
+.add-direccion-accion {
+    color: var(--accent1);
+    text-decoration: underline;
+}
+
+.add-direccion-accion:hover {
+    cursor: pointer;
+}
+
+.regresar-a-comprar {
+    margin: 1rem;
+    padding: 0 3rem;
+    height: 3rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #E1E0DD;
+    color: gray;
+    width: 70%;
+}
+
+.regresar-a-comprar:hover {
+    outline: none;
+    cursor: pointer;
+    background-color: #7C7C7C;
+    color: white;
+    outline: none;
+}
+
+@media all and (max-width: 480px) {
+    .checkout-container {
+        width: 90%;
+    }
+    .checkout-container h1 {
+        text-align: center;
+    }
+    .checkout-pedido {
+        flex-direction: column;
+    }
+    .checkout-productos {
+        width: 100%;
+    }
+    .checkout-datos {
+        flex-direction: column;
+    }
+    .checkout-otros-datos {
+        margin-top: .5rem;
+    }
+    .checkout-right {
+        width: 100%;
+        margin-top: 1rem;
+    }
+}

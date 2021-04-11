@@ -1,0 +1,12 @@
+html {
+    font-size: 64%;
+    /* 62.5% de 16px es igual a 10px*/
+    ;
+}
+
+.titulo {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    font-size: 1rem;
+    color: #778899;
+}

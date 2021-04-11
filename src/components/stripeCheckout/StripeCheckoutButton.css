@@ -1,0 +1,27 @@
+.boton-pagar {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 2rem auto;
+    width: 100%;
+    padding: .5rem;
+    border-radius: 2rem;
+    color: gray;
+    border: 1px solid var(--accent4);
+    outline: none;
+}
+
+.boton-pagar:hover {
+    outline: none;
+    cursor: pointer;
+    color: white;
+    background-color: var(--accent4);
+}
+
+.boton-pagar:disabled {
+    outline: none;
+    cursor: no-drop;
+    color: gray;
+    background-color: lightgray;
+    border: 1px solid gray;
+}

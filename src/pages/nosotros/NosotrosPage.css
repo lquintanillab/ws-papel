@@ -1,0 +1,23 @@
+ .banner-contenedor {
+     margin-top: 6rem;
+ }
+ 
+ .contenedor-nosotros {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     width: 100vw;
+ }
+ 
+ .seccion-columna {
+     width: 60%;
+ }
+ 
+ .texto-nosotros {
+     margin-top: 0;
+     margin-bottom: 2rem;
+     font-family: 'M PLUS Rounded 1c', sans-serif;
+     font-size: 1.5rem;
+     font-weight: 700;
+     color: gray;
+ }

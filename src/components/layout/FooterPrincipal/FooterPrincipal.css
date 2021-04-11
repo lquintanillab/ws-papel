@@ -1,0 +1,115 @@
+.footer-principal {
+    height: auto;
+    width: 100vw;
+    /* background-color: #1B1D21; */
+    background-color: #353535;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem;
+}
+
+.footer-content {
+    width: 90vw;
+    height: 100%;
+}
+
+.divider {
+    margin-top: .5rem;
+    border-top: 1px solid white;
+}
+
+.footer-segmentos {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.segmento {
+    width: 20%;
+}
+
+.facebook {
+    display: block;
+    width: 45px;
+    height: 45px;
+    border-radius: 50px;
+    font-size: 20px;
+    color: #fff;
+    line-height: 60px;
+    text-align: center;
+    background-color: #f2142b;
+    background-image: url(../../../assets/Facebook.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    float: left;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+
+/* .icon {
+    display: block;
+    width: 45px;
+    height: 45px;
+    border-radius: 50px;
+    font-size: 20px;
+    color: #fff;
+    line-height: 60px;
+    text-align: center;
+    background-color: #f2142b;
+    background-image: url(../../../assets/scissors-4-24.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    float: left;
+    margin-left: 20px;
+    margin-top: 10px;
+} */
+
+.twitter {
+    display: block;
+    width: 45px;
+    height: 45px;
+    border-radius: 50px;
+    font-size: 20px;
+    color: #fff;
+    line-height: 60px;
+    text-align: center;
+    background-color: #f2142b;
+    background-image: url(../../../assets/Twitter.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    float: left;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+@media screen and (max-width: 1200px) {
+    .footer-principal {
+        justify-content: center;
+        align-items: center;
+    }
+    .footer-segmentos {
+        justify-content: center;
+        align-items: center;
+    }
+    .segmento {
+        width: 30%;
+        margin-bottom: 2rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .footer-principal {
+        justify-content: center;
+        align-items: center;
+    }
+    .footer-segmentos {
+        justify-content: center;
+        align-items: center;
+    }
+    .segmento {
+        width: 100%;
+    }
+}
