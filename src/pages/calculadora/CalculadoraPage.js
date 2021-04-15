@@ -3,7 +3,10 @@ import React from 'react';
 const CalculadoraPage = () => {
     return (
         <div>
-            <h1>CalculadoraPage</h1>
+            <div className="calculadora-page">
+                <app-calculadora >
+                </app-calculadora>
+            </div>
         </div>
     );
 }

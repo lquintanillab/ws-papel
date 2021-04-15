@@ -1,6 +1,6 @@
 import React,{ useEffect, useState } from 'react';
 import axios from 'axios';
-import {HashRouter as Router, Switch, Route} from 'react-router-dom';
+import {HashRouter as Router, Switch, Route, Link} from 'react-router-dom';
 import MainLayout from '../components/layout/MainLyout/MainLayout';
 import LoginPage from '../pages/auth/LoginPage';
 import RegisterPage from '../pages/auth/RegisterPage';
@@ -29,7 +29,7 @@ import MisDireccionesPage from '../pages/cuenta/MisDireccionesPage';
 import { startLoadingProfile } from '../actions/profile';
 import DireccionPage from '../pages/cuenta/DireccionPage';
 import UsoPage from '../pages/ecommerce/uso/UsoPage';
-
+import CalculadoraPage from '../pages/calculadora/CalculadoraPage'
 import ClasificacionesPage from '../pages/ecommerce/clasificaciones/ClasificacionesPage';
 import ProductosPage from '../pages/ecommerce/productos/ProductosPage';
 import CarritoPage from '../pages/ecommerce/carrito/CarritoPage'
@@ -42,11 +42,13 @@ import ConfirmacionPage from '../pages/ecommerce/confirmacion/ConfirmacionPage';
 import LoadingIndicator from '../components/layout/Loading/LoadingIndicator';
 import {db} from '../config/firebaseConfig';
 import { loadCarrito } from '../actions/carrito';
+import { useMediaQuery } from 'react-responsive'
 
 
 
 const AppRouter = () => {
 
+    const isTabletOrMobile = useMediaQuery({ maxWidth: 1224 })
     const dispatch = useDispatch();
 
     const [checking, setchecking] = useState(true);
@@ -178,6 +180,14 @@ const AppRouter = () => {
                         )}
                     />
                     <Route 
+                        exact path="/calculadora" 
+                        render = {() => (
+                            <MainLayout>
+                                <CalculadoraPage/>
+                            </MainLayout>
+                        )}
+                    />
+                    <Route 
                         exact path="/catalogo" 
                         render = {() => (
                             <MainLayout>
@@ -294,12 +304,20 @@ const AppRouter = () => {
                         path='/confirmacion'
                         component = {ConfirmacionPage}
                         isAuthenticated= {loggedIn}      
-                    />
-                    
-
-
+                    />              
                    
                 </Switch>
+              
+                   {isTabletOrMobile ?
+                    <Link to="/calculadora" className="fab">
+                        <i className="fas fa-cut" ></i>
+                    </Link> :
+                    null
+
+                   }
+                        
+                    
+            
             </div>
         </Router>
     );

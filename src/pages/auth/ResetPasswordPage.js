@@ -1,6 +1,7 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {Link, useHistory} from 'react-router-dom';
 import { useForm } from '../../hooks/useForm';
+import { firebase }  from '../../config/firebaseConfig'
 
 import './LoginPage.css'
 
@@ -10,10 +11,17 @@ const ResetPasswordPage = () => {
         email: ''
     })
 
+    let history = useHistory()
     const { email }  = formValues; 
 
-    const sendReset = () => {
-        reset();
+    const sendReset = async (e) => {
+        e.preventDefault();
+        try{
+            await firebase.auth().sendPasswordResetEmail(email)
+            history.push("/login")
+        }catch(error){
+            alert(error)
+        }
     }
 
     return (

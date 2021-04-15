@@ -4,8 +4,6 @@ import AppRouter from './routers/AppRouter';
 import { store } from './store/store';
 
 
- 
-
 
 import './PapelApp.css';
 import PapelChatbot from './components/Chatbot/PapelChatbot';
@@ -38,9 +36,12 @@ const PapelApp = () => {
                
                     <AppRouter />  
                     <PapelChatbot /> 
-                    <div className="fab" onClick={showDawer}>
+                    { !isTabletOrMobile ?
+                        <div className="fab" onClick={showDawer}>
                         <i className="fas fa-cut" ></i>
-                    </div>  
+                        </div>  :
+                        null
+                    } 
                     <Dawer/> 
                 </div>      
             </Provider>

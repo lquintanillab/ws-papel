@@ -47,7 +47,7 @@ export const startRegisterEmailPassword = (nombre, rfc, email,password) =>{
         firebase.auth().createUserWithEmailAndPassword(email,password)
         .then(async ({user}) => {
             await user.updateProfile({displayName:nombre});
-            const configuracion = {url: "http://localhost:3000/login"};
+            const configuracion = {url: "http://papelsa.com.mx/papelReact/login"};
             await user.sendEmailVerification(configuracion);   
             await db.collection('users').doc(user.uid).set({nombre,rfc,email, uid: user.uid });
             dispatch(login(user.uid, user.displayName));

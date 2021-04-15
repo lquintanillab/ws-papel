@@ -52,23 +52,82 @@ const PapelChatbot = () => {
         },
         {
             id: "saludoCliente",
-            message: "¡ Hola {previousValue} ! ¿Te interesa ...?",
-            trigger: "opciones1"
+            message: "¡ Hola {previousValue}!, ¿ Me puedes proporcionar tu email ?",
+            trigger: "emailCliente"
         },
         {
-            id: "opciones1",
-            options: [
-                { value: 'comprar', label: 'Comprar un Papel', trigger: "pasoFinal" },
-                { value: 'informacion', label: 'Informacion', trigger: "pasoFinal" },
-                { value: 'queja', label: 'Queja/ Reclamacion', trigger: "pasoFinal" },
-              ],
-            
+          id: "emailCliente",
+          user: true,
+          trigger: "solicitud-informacion-tel"
         },
         {
-            id:"pasoFinal",
-            message: "bye",
+          id:'solicitud-informacion-tel',
+          message:"¿Cual es tu teléfono?",
+          trigger: "telCliente"
+        },
+        {
+          id: "telCliente",
+          user: true,
+          trigger: "preguntaTema"
+        },
+        {
+          id:'preguntaTema',
+          message:"¿ En que te puedo ayudar ?",
+          trigger: "opciones1"
+        },
+        {
+          id: "opciones1",
+          options: [
+              { value: 'comprar', label: 'Comprar un Papel', trigger: "compra" },
+              { value: 'informacion', label: 'Informacion', trigger: "informacion" },
+              { value: 'queja', label: 'Queja/ Reclamacion', trigger: "queja"},
+            ],
+        },
+        {
+          id:'queja',
+          message:"¿ Me puedes indicar cual es tu queja ?",
+          trigger: "asunto-queja"
+        },
+        {
+          id:'informacion',
+          message:"¿ Me puedes indicar que información necesitas ?",
+          trigger: "asunto-compra"
+        },
+        {
+          id:'compra',
+          message:"¿ Me puedes indicar que papel quieres comprar ?",
+          trigger: "asunto-informacion"
+        },
+        {
+          id: "asunto-queja",
+          user: true,
+          trigger: "final-queja"
+        },
+        {
+          id: "asunto-compra",
+          user: true,
+          trigger: "final-compra"
+        },
+        {
+          id: "asunto-informacion",
+          user: true,
+          trigger: "final-informacion"
+        },
+        {
+            id:"final-queja",
+            message: "Lamento el inconveniente, En un momento un ejecutivo se comunicará contigo para darte una solución",
             end: true
-        }
+        },
+        {
+          id:"final-compra",
+          message: "Gracias!, En un momento un ejecutivo se comunicará contigo.",
+          end: true
+        },
+        {
+          id:"final-informacion",
+          message: "Gracias!, En un momento un ejecutivo se comunicará contigo para propocionarte la información.",
+          end: true
+      }
       ];
 
       const uiState = useSelector(state => state.ui);
@@ -78,8 +137,16 @@ const PapelChatbot = () => {
       const dispatch = useDispatch()
 
       const handleEnd = ({ values }) => {
+
+          let datos = {
+            nombre: values[0],
+            email: values[1],
+            telefono: values[2],
+            tipo:values[3],
+            asunto: values[4]
+          }
        
-         db.collection('informacion').add({...values, estado: 'PENDIENTE'}).then(()=>{
+         db.collection('informacion').add({...datos, estado: 'PENDIENTE'}).then(()=>{
           Swal.fire(
               '¡Gracias!',
               'En un momento nos comunicamos contigo',

@@ -1,40 +1,40 @@
 .contenedor-precios {
     margin-top: 6rem;
-}
-
-.contenedor-columns {
-    display: flex;
-    flex-direction: row;
-}
-
-.contenedor-column {
-    margin: 0;
-    padding: 0;
-    background-position: center top;
-    background-size: cover;
-    width: 50%;
-    height: auto;
-    min-height: 90vh;
+    background-color: #EDF0F1;
+    height: 75vh;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 }
 
-.contenedor-column1 {
-    background-image: url('../../assets/cajasbox2.jpeg');
+.button-lista {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.contenedor-column2 {
-    background-image: url('../../assets/hero2.jpg');
+.vigencia {
+    margin-bottom: 2rem;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size: 1.5rem;
+    color: var(--accent4);
 }
 
-@media screen and (max-width: 800px) {
-    .contenedor-columns {
-        flex-direction: column;
-    }
-    .contenedor-column {
-        width: 100%;
-        height: auto;
-        min-height: 50vh;
-    }
+.link-lista {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 2rem auto;
+    padding: 1rem 2rem;
+    border-radius: 3rem;
+    border: 1px solid var(--primario);
+    color: white;
+    background-color: var(--accent4);
+}
+
+.link-lista:hover {
+    outline: none;
+    cursor: pointer;
+    background-color: var(--blanco);
+    color: var(--accent4);
 }
