@@ -17,7 +17,7 @@ import almacen from '../../assets/almacen.jpg'
 const NosotrosPage = () => {
 
     return (
-        <>
+        <div className="contenedor-principal-nosotros">
             <BarraPrincipal show={ true } />
 
             <div className="banner-contenedor" >
@@ -71,7 +71,7 @@ const NosotrosPage = () => {
             </div>
 
             <FooterPrincipal />
-        </>
+        </div>
     );
 }
 

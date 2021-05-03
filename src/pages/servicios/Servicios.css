@@ -1,0 +1,71 @@
+.servicios-container {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    color: gray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /*   background-color: #EDF0F1; */
+}
+
+.header-article-servicios,
+.header-article-mas {
+    font-size: 3rem;
+    text-transform: uppercase;
+}
+
+.list-article-servicios {
+    border-style: solid;
+    border-color: black;
+    border-width: 2px 0px;
+    padding: 1rem 4rem;
+}
+
+.list-article-mas {
+    padding: 0 4rem;
+}
+
+.item-servicios,
+.item-mas,
+.paragraph-mas {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.article-mas {
+    margin-bottom: 2rem;
+}
+
+.header-servicios {
+    margin: 0;
+    margin: 2rem 0;
+}
+
+.body-servicios {
+    display: flex;
+    width: 80vw;
+}
+
+.section-servicios {
+    width: 80%;
+    padding: 0 6rem;
+}
+
+.aside-servicios {
+    width: 20%;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.banner-servicios-header,
+.banner-servicios-aside {
+    height: 100%;
+    width: auto;
+}
+
+@media screen and (max-width: 1200px) {
+    .banner-servicios-header,
+    .banner-servicios-aside {
+        display: none;
+    }
+}
