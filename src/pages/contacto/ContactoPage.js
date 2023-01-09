@@ -69,7 +69,6 @@ const ContactoPage = () => {
                                 nombre= "nombre" 
                                 placeholder="Nombre"  
                                 handleChange= {handleInputChange}
-                               
                              />
                              
                               <InputForm 

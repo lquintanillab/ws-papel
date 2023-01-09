@@ -111,7 +111,7 @@ const BuscadorPage = () => {
         return () => {
             /* Funcion limpiar*/ 
         };
-    }, []);
+    }, [productosState]);
 
     const configToast =  {
         position: toast.POSITION.BOTTOM_CENTER,

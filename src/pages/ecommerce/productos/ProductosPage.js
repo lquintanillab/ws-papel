@@ -5,14 +5,17 @@ import { ToastContainer, toast } from 'react-toastify';
 import { useLocation } from "react-router-dom";
 
 import ProductosEcPage from './ProductosEcPage';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { breadcrumbUpdate } from '../../../actions/ui';
 import Breadcrumbs from '../../../components/Breadcrumbs/Breadcrumbs';
 
+import { apiUrl } from '../../../config/axiosInstance';
 
 import './ProductosPage.css';
 import 'react-toastify/dist/ReactToastify.css';
+//import ProductosEmpty from '../../../components/productosEmpty/ProductosEmpty';
 
+// http://localhost:3000/#/confirmacion?pedido=NiDNANCYRgRJrOhT7HZL
 
 const ProductosPage = (props) => {
 
@@ -37,21 +40,17 @@ const ProductosPage = (props) => {
     const   query = queryString.parse(location.search)
     let query2 = new URLSearchParams(useLocation().search);
 
-    console.log(location.search);
+    //console.log(location.search);
     //console.log(productos);
     //console.log(JSON.parse(productos));
     useEffect(()=>{
       
-         //const url = `http://localhost:4000/productos${location.search}`;
-        //const url = `http://localhost:8000/productos${location.search}`;
-        //const url = `http://localhost:8000/api/productos-ecommerce/${query.clasificacion2.toUpperCase()}`;
-        const url = `http://api.papelsa.mobi:8000/api/productos-ecommerce/${query.clasificacion2.toUpperCase()}`;
-        
-       
-    
+        const url = `${apiUrl.url}productos-ecommerce/${query.clasificacion2.toUpperCase()}`;
+ 
         const consultarApi = async () =>{
     
             const data = await axios.get(url)
+            console.log("Data");
             console.log(data.data);
             const prods = data.data
             //const prods = data.data.map(data => data.fields)
@@ -78,10 +77,8 @@ const ProductosPage = (props) => {
                     </div>
                 </div> 
            
-            <div className="productos">
-                {
-                    productos.map(producto => <ProductosEcPage key ={producto.id} producto={producto} notify={notify} />) 
-                } 
+            <div className="productos">   
+                {productos.map(producto => <ProductosEcPage key ={producto.id} producto={producto} notify={notify} />) }
             </div>
         </>
         

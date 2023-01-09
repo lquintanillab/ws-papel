@@ -3,7 +3,7 @@ import { types } from '../types/types';
 import { endLoading, setError, startLoading } from './ui';
 import Swal from 'sweetalert2';
 import { removeProfile } from './profile';
-import { desAsignarCarrito, vaciarCarrito } from './carrito';
+import { desAsignarCarrito} from './carrito';
 
 
 export const startLoginEmailPassword = (email, password)=>{

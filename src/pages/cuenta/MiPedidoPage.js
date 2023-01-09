@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import BackButton from '../../components/BackButton/BackButton';
-import BuscadorProductos from '../../components/buscadorProductos/BuscadorProductos';
 import axios from 'axios';
 
-import ProductosEcPage from '../ecommerce/productos/ProductosEcPage';
 
 
 
@@ -12,7 +10,7 @@ const MiPedidoPage = (props) => {
 
 
    const handleChange = (e) =>{
-        console.log(e.target.value);
+        //console.log(e.target.value);
         setFecha(e.target.value);
    }
 

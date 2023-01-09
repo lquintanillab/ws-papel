@@ -9,7 +9,7 @@ import axios from 'axios';
 /*Test de Firebase*/
 import MapView from '../../components/MapView/MapView';
 import Modal from '../../components/modal/Modal';
-import Geocode from "react-geocode";
+//import Geocode from "react-geocode";
 
 
 import './Direccion.css'
@@ -79,7 +79,7 @@ const DireccionPage = (props) => {
               
 
                refresh();
-               colonia= ""
+               //colonia= ""
            }catch(e){
                
            }
@@ -133,15 +133,15 @@ const DireccionPage = (props) => {
                     'adminArea1':'MX'
                 }
             }
-            const callback =(result) =>{
-                console.log(result);
-            }
+            /* const callback =(result) =>{
+                //console.log(result);
+            } */
             //const url = `http://www.mapquestapi.com/geocoding/v1/address?key=${apiKey}&location=${valueForms.calle}, ${valueForms.colonia},${valueForms.ciudad},${valueForms.estado},${valueForms.cp}&maxResults=1`
             //const url = `http://www.mapquestapi.com/geocoding/v1/address?key=${apiKey}&street=${valueForms.calle}&city=${valueForms.ciudad}&state=${valueForms.estado}&postalCode=${valueForms.cp}&maxResults=1`
             const url = `https://www.mapquestapi.com/geocoding/v1/address?key=${apiKey}&json=${JSON.stringify(json)}`
         
             const response = await axios.get(url)
-            console.log(response.data.results[0]);
+            //console.log(response.data.results[0]);
      
             const { lat, lng } = response.data.results[0].locations[0].displayLatLng;
            

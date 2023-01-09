@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState} from 'react';
 import { useSelector } from 'react-redux';
 import BuscadorDebounce from '../../../components/buscador/BuscadorDebounce';
 import { buscarProductosExc } from '../../../helpers/busquedaHelper';
@@ -11,14 +11,14 @@ import ProductosEcPage from '../productos/ProductosEcPage';
 const BuscadorFilterTextPage = () => {
 
     const productosState = useSelector(state => state.productos )
-    const [busqueda, setBusqueda] = useState("");
+    //const [busqueda, setBusqueda] = useState("");
     const [productosFind, setProductosFind] = useState([]);
 
     const handleBuscadorChange = (e) =>{
   
         const result = buscarProductosExc(productosState, e.target.value)
         setProductosFind(result)
-        setBusqueda(e.target.value)
+        //setBusqueda(e.target.value)
     }
 
 

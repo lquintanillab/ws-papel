@@ -4,7 +4,7 @@ import ProductoPage from '../producto/ProductoPage';
 
 //import Buscador from '../../layout/buscador/Buscador'
 import { useLocation } from "react-router-dom";
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { breadcrumbUpdate } from '../../../actions/ui';
 
 
@@ -43,7 +43,7 @@ const ClasificacionesPage = (props) => {
             
         }))
     
-    },[props, location.search]);
+    },[props, location.search,dispatch, query]);
 
     return ( <div className="content-productos">
                 {/*  <Buscador className="buscador"/> */}

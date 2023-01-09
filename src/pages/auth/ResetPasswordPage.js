@@ -7,7 +7,7 @@ import './LoginPage.css'
 
 const ResetPasswordPage = () => {
 
-    const [formValues, handleInputChange, reset] = useForm({
+    const [formValues, handleInputChange] = useForm({
         email: ''
     })
 

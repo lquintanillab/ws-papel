@@ -4,7 +4,7 @@ import {  useSelector } from 'react-redux';
 
 import './Breadcrumbs.css'
 
-const Breadcrumbs = ({}) => {
+const Breadcrumbs = () => {
     
     const uiState = useSelector(state => state.ui)
 

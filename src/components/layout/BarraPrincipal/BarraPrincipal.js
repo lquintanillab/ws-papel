@@ -8,6 +8,8 @@ import { Link} from 'react-router-dom';
 import {links} from '../../../helpers/utils';
 import logo from '../../../assets/logo3.png';
 
+import { supabase } from '../../../config/supabaseconfig' 
+
 
 
 
@@ -33,8 +35,9 @@ const BarraPrincipal = ( {show} ) => {
         setFixed(currPos.y !== 0);
     });
 
-    const handleLogout = () => {
-        dispatch(startLogout());
+    const handleLogout = async () => {
+        //dispatch(startLogout());
+        await supabase.auth.signOut();
     }
 
     return (
@@ -66,9 +69,10 @@ const BarraPrincipal = ( {show} ) => {
                          : <li><Link to='/login'>Iniciar sesion</Link></li>         
                     }
                     {
-                        profileState?.nombre
+                        /* profileState?.nombre
                         ?<li onClick= {handleLogout}><i className="fas fa-sign-out-alt"></i></li>
-                        :null
+                        :null */
+                        <li onClick= {handleLogout}><i className="fas fa-sign-out-alt"></i></li>
                     }
                      {
                         carritoState?.productos.length > 0

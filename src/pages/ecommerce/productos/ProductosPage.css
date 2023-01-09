@@ -10,16 +10,23 @@
     width: 90vw;
 }
 
+.producto-agotado {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    color: var(--accent1);
+    font-size: 2rem;
+    font-weight: 600;
+}
+
 .producto {
     width: 24%;
-    padding: 30px 30px;
+    padding: 20px 20px;
     display: inline-flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     margin: 1rem;
     border-radius: 1rem;
-    border: 1px solid rgba(226, 222, 222, 0.349);
+    border: 1px solid rgba(32, 31, 31, 0.7);
 }
 
 .producto>img {
@@ -28,12 +35,12 @@
     margin-bottom: 15px;
 }
 
-.nombre-producto {
+.nombre-producto1 {
     font-family: 'M PLUS Rounded 1c', sans-serif;
-    align-items: center;
     color: var(--accent1);
-    font-size: 2rem;
-    height: 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
 }
 
 .descripcion-producto {
@@ -117,10 +124,10 @@
     .producto {
         width: 40%;
     }
-    .nombre-producto {
+    /*  .nombre-producto {
         font-size: 1.5rem;
         height: 5rem;
-    }
+    } */
     .descripcion-producto {
         font-size: 1.5rem;
         font-weight: medium;

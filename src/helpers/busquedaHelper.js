@@ -23,6 +23,8 @@
                 }
                 newProds = productos.filter( producto =>  producto.clasificacion2 === valor)
                 break;
+            default:
+                break
         }
 
       
@@ -45,7 +47,7 @@
     }
 
     export const buscarProductos = (productos, busqueda) =>{
-        console.log(busqueda);
+        //console.log(busqueda);
         let newProds = productos;
         if(busqueda.uso !== ""){
             newProds = newProds.filter(producto => producto.uso === busqueda.uso )

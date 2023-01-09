@@ -60,7 +60,7 @@ const CarritoPage = () => {
        const newImporteDesc = calcularImporteParaDescuento(newProds)
   
        const descuento = descuentosState.find(descuento => newImporteDesc <= descuento.importe );
-   
+        //console.log("**************"+JSON.stringify(descuento));
        dispatch(actualizarImportes(newProds,newTotal,newImporteDesc,descuento.descuento))
     }
     const quitarProducto = (producto,index) =>{
@@ -74,9 +74,18 @@ const CarritoPage = () => {
             confirmButtonText: 'Si, Quitar!'
         }).then((result) => {
             /* Read more about isConfirmed, isDenied below */
-            if (result.isConfirmed) {
+            if (result.isConfirmed) {  
                 const newProductos = [...carritoState.productos]
+                if(newProductos.length === 1){
+                    dispatch(startVaciarCarrito(carritoState))
+                    Swal.fire(`Se elimino el producto ${producto.clave}`, '', 'success')
+                    return
+                }
+                //console.log("______________________________");
+                //console.log(newProductos);
                 newProductos.splice(index,1)
+                //console.log(newProductos);
+                //console.log("______________________________");
                 //const newTotal = actualizarTotalesCarrito(newProductos)
                 const newTotal = actualizarTotalesCarrito(newProductos)
                 const newImporteDesc = calcularImporteParaDescuento(newProductos)

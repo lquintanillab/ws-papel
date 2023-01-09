@@ -7,6 +7,7 @@ import BarraPrincipal from '../../components/layout/BarraPrincipal/BarraPrincipa
 import FooterPrincipal from '../../components/layout/FooterPrincipal/FooterPrincipal';
 import { useForm } from '../../hooks/useForm';
 
+import { supabase } from '../../config/supabaseconfig'; 
 
 import './LoginPage.css'
 
@@ -25,9 +26,14 @@ const LoginPage = () => {
 
     const {email, password} = formValues;
 
-    const onSubmit = (e) =>{
+    const onSubmit = async (e) =>{
         e.preventDefault();
-        dispatch(startLoginEmailPassword(email,password));
+        //dispatch(startLoginEmailPassword(email,password));
+        const { data, error } = await supabase.auth.signInWithPassword({
+            email: email,
+            password: password,
+          })
+        console.log(data);
        //dispatch(startGoogleLogin())
     }
    

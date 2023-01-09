@@ -2,7 +2,7 @@ import React from 'react';
 import { loadStripe } from '@stripe/stripe-js';
 import { useDispatch, useSelector } from 'react-redux';
 import {startGuardarCarrito} from '../../actions/carrito'
-
+import { apiUrl } from '../../config/axiosInstance';
 import './StripeCheckoutButton.css'
 
 // Make sure to call `loadStripe` outside of a component’s render to avoid
@@ -16,33 +16,16 @@ const StripeCheckoutButton = ({total,desactivado,confirmarPedido}) => {
   const dispatch = useDispatch(startGuardarCarrito(carritoState));
 
     const handleClick = async (event) => { 
-        console.log("Uuuuuuuuuuuuuuuuuuuuuu");
-        console.log("Haciendo Checkout");
+        
+        
         dispatch(startGuardarCarrito(carritoState));
         const docSnap = await confirmarPedido();
-        console.log("Document Snap");
-        console.log(docSnap.id);
+
         // Get Stripe.js instance
         const stripe = await stripePromise;
          const aPagar = (Number(total).toFixed(2))* 100
-         console.log(aPagar);
-        // Call your backend to create the Checkout Session
-        /* const response = await fetch('http://localhost:4242/create-checkout-session', { 
-            method: 'POST',
-            body: JSON.stringify({
-                summary: 'myName',
-                change: aPagar
-              })
-         }); */
-         /* const response = await fetch('http://localhost:8000/create-checkout-session/', { 
-          method: 'POST',
-          body: JSON.stringify({
-              summary: 'myName',
-              change: aPagar,
-              pedido: docSnap.id
-            })
-       }); */
-       const response = await fetch('http://api.papelsa.mobi:8000/create-checkout-session/', { 
+
+         const response = await fetch(`${apiUrl.url2}create-checkout-session/`, { 
           method: 'POST',
           body: JSON.stringify({
               summary: 'myName',
@@ -50,16 +33,21 @@ const StripeCheckoutButton = ({total,desactivado,confirmarPedido}) => {
               pedido: docSnap.id
             })
        });
+       /* const response = await fetch('http://api.papelsa.mobi:8000/create-checkout-session/', { 
+          method: 'POST',
+          body: JSON.stringify({
+              summary: 'myName',
+              change: aPagar,
+              pedido: docSnap.id
+            })
+       }); */
 
         const session = await response.json();
-        //const session = JSON.parse(response);
 
         // When the customer clicks on the button, redirect them to Checkout.
         const result = await stripe.redirectToCheckout({
           sessionId: session.id,
         });
-
-        console.log(result);
     
         if (result.error) {
           // If `redirectToCheckout` fails due to a browser or network

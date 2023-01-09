@@ -1,0 +1,13 @@
+.cfdiMail-container {
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.mail-container {
+    width: 50%;
+    height: 100%;
+}

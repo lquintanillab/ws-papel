@@ -6,3 +6,9 @@ export const axiosInstance = axios.create({
     headers: {}
   });
 
+
+  export const apiUrl = {
+    url: "http://localhost:8000/api/",
+    url2: "http://localhost:8000/",
+
+  }

@@ -1,10 +1,10 @@
 import {db} from '../config/firebaseConfig'
 import { types } from '../types/types';
 import Swal from 'sweetalert2';
-import { endLoading, startLoading } from './ui';
+import { endLoading } from './ui';
 
 export const startAgregarProducto = (producto,total,importeParaDescuento,descuento) =>{
-    console.log("Agregando el producto");
+    //console.log("Agregando el producto");
     return  (dispatch) =>{  
        dispatch(agregarProducto(producto,total,importeParaDescuento,descuento));
     }
@@ -127,11 +127,11 @@ export const quitarProducto= (productos,total,importeParaDescuento,descuento) =>
     return (dispatch) =>{
         db.collection('carritos').doc(uid).get().then(doc =>{
             if (doc.exists) {
-                console.log("Document data:", doc.data());
+                //console.log("Document data:", doc.data());
                 dispatch(loadCarrito(doc.data()))
             } else {
                 // doc.data() will be undefined in this case
-                console.log("No such document!");
+                //console.log("No such document!");
             }
         })
     }

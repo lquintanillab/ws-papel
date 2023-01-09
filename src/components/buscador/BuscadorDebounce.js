@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { fromEvent } from 'rxjs';
-import { debounceTime, map } from 'rxjs/operators';
+import { debounceTime} from 'rxjs/operators';
 
 import './Buscador.css'
 

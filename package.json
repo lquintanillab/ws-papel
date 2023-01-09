@@ -6,6 +6,7 @@
     "dependencies": {
         "@n8tb1t/use-scroll-position": "^1.0.43",
         "@stripe/stripe-js": "^1.12.1",
+        "@supabase/supabase-js": "^2.0.0",
         "@testing-library/jest-dom": "^4.2.4",
         "@testing-library/react": "^9.3.2",
         "@testing-library/user-event": "^7.1.2",

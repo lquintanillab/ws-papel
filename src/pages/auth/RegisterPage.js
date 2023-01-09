@@ -13,6 +13,7 @@ import './LoginPage.css'
 import { removeError, setError } from '../../actions/ui';
 import { startRegisterEmailPassword } from '../../actions/auth';
 
+import {supabase} from '../../config/supabaseconfig';
 
 
 const configToast = {
@@ -29,6 +30,7 @@ const RegisterPage = () => {
 
     useEffect(() => {
        toast.error(msgError,configToast)
+       dispatch(setError(null));
     }, [msgError]);
     
     
@@ -48,7 +50,8 @@ const RegisterPage = () => {
         // dispatch(startRegisterEmailPassword(nombre,rfc,email,password))
         
         if(isFormValid()){
-            dispatch(startRegisterEmailPassword(nombre,rfc,email,password))
+            //dispatch(startRegisterEmailPassword(nombre,rfc,email,password))
+            signup_supabase(email, password)
         }
     
     }
@@ -78,6 +81,14 @@ const RegisterPage = () => {
     }
 
  
+    const signup_supabase = async(email, password) =>{
+        console.log('Creando el usuario en supabase')
+        const { data, error } = await supabase.auth.signUp({
+            email: email,
+            password: password,
+          })
+          console.log(data)
+    }
 
     return (
         <div className="contenedor-login">
@@ -131,7 +142,7 @@ const RegisterPage = () => {
                             />
                         </div>
                         <div className="campo-form">
-                        Al crear una cuenta, aceptas el Aviso de Privacidad, los Términos y Condiciones, así como el envío de noticias y promociones exclusivas. Puedes desactivar el envío de promociones desde el enlace incluido en cada correo.
+                            Al crear una cuenta, aceptas el Aviso de Privacidad, los Términos y Condiciones, así como el envío de noticias y promociones exclusivas. Puedes desactivar el envío de promociones desde el enlace incluido en cada correo.
                         </div>
                         <div className="campo-form">
                             <input 

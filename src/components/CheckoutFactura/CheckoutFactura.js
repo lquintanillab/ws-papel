@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import { useSelector } from 'react-redux';
 import SelectorDirecciones from '../SelectorDirecciones/SelectorDirecciones';
 
@@ -45,7 +45,7 @@ const CheckoutFactura = ({pedido,setPedido}) => {
         } 
      }
      const onChangeUso = (e) =>{
-         console.log(e.target.value);
+         //console.log(e.target.value);
         setPedido({
             ...pedido,
             usoDeCfdi: e.target.value

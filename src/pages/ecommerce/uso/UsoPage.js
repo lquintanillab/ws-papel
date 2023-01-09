@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import ProductoPage from '../producto/ProductoPage';
-import Buscador from '../../../components/buscador/Buscador';
-
+//import Buscador from '../../../components/buscador/Buscador';
+import { apiUrl } from '../../../config/axiosInstance';
 import './UsoPage.css';
 import BuscadorButton from '../../../components/buscadorButton/BuscadorButton';
 
@@ -11,9 +11,7 @@ const UsoPage = () => {
     const [usos, guardarUsos] = useState([]); 
 
 useEffect(()=>{
-     //const url = `http://localhost:4000/uso`;
-    //const url = `http://localhost:8000/api/uso-ecommerce`;
-    const url = `http://api.papelsa.mobi:8000/api/uso-ecommerce`;
+    const url = `${apiUrl.url}uso-ecommerce`;
 
     const consultarApi = async () =>{
 

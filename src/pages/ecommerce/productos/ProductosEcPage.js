@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { startAgregarProducto} from '../../../actions/carrito';
 import './ProductosPage.css'
 
+import prod from '../../../assets/CIRCULO-05.png'
+
 
 
 const ProductosEcPage = ({producto,notify}) => {
@@ -47,6 +49,7 @@ const ProductosEcPage = ({producto,notify}) => {
                 hxp: producto.hxp,
                 importe: Number(importe),
                 cantidad: Number(cantidad),
+                producto: producto.producto,
                 modoVenta: producto.modoVenta
             },newTotal,importeParaDescuento,descuento.descuento)) 
             setCantidad('')
@@ -58,14 +61,17 @@ const ProductosEcPage = ({producto,notify}) => {
 
     return (
         <div className="producto">
-            {/* <img src={producto.imagen} alt={producto.clave}/> */}
-            <p className="nombre-producto">{producto.clave}</p>
-            <p className="descripcion-producto" >{producto.descripcion}</p>
+            { <img src={prod} alt={producto.clave}/>}
+            <p className="nombre-producto">{producto.clave}</p> 
+            <p className="nombre-producto1" >{producto.descripcion}</p>
             <div className="datos-producto">
-                <p className="descripcion-producto" >Medida : {producto.medida}</p>
-                <p className="descripcion-producto" >Marca : {producto.marca}</p>
+                {/* <p className="descripcion-producto" >Medida : {producto.medida}</p>
+                <p className="descripcion-producto" >Marca : {producto.marca}</p> */}
+                <p className="descripcion-producto" ></p>
                 {producto.paquete ? <p>Presentación: Paquete con {producto.hxp} hojas</p>: null}
+                {producto.paquete ? <p>Precio por millar para este producto</p>: null}
                 {hojasCortado > 0.00 ? <p>{cantidad} Paquete(s) Corresponde a {hojasCortado} hojas</p>: null}
+               {/*  {producto.existencia.cantidad__sum ===  0.00 ? <p>Agotado</p>: <p></p>} */}
             </div>
             
             <div className="price-wrapper">
@@ -73,14 +79,23 @@ const ProductosEcPage = ({producto,notify}) => {
                 <p className="descripcion-producto color-resaltado">{numberFormat(producto.precioContado)}</p>  
                 <p className="descripcion-producto"> Importe: </p> 
                 <p className="descripcion-producto color-resaltado">{numberFormat(importe) }</p> 
-            </div>     
-            <div className="producto-carrito">
-                <input type="number" className="producto-cantidad" placeholder="Cantidad" onChange={handleInputChange} value={cantidad}/>
-                <button className="producto-add" onClick={addToCart}>
-                        Agregar al carrito
-                        <i className="fas fa-shopping-cart icono-cart" aria-hidden="true"></i>
-                </button>
-            </div>
+            </div>  
+            {   (producto.activo && producto.existencia.cantidad__sum !==  0.00 ) ? 
+                <div className="producto-carrito">
+                    <input type="number" className="producto-cantidad" placeholder={producto.paquete ? "Paquetes" : "Cantidad"} onChange={handleInputChange} value={cantidad} />
+                    <button className="producto-add" onClick={addToCart}>
+                            Agregar al carrito
+                            <i className="fas fa-shopping-cart icono-cart" aria-hidden="true"></i>
+                    </button>
+                </div> :
+                (producto.existencia.cantidad__sum ===  0.00 && producto.activo ) ?
+                <div className="producto-agotado">
+                    <p>Producto sin existencia</p>
+                </div> :
+                <div className="producto-agotado">
+                    <p>A la venta proximamente</p>
+                </div> 
+            }
         </div>
     );
 }

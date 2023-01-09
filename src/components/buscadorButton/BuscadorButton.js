@@ -7,7 +7,7 @@ const BuscadorButton = () => {
 
     return (
         <Link to={{
-            pathname: '/buscador',
+            pathname: '/buscador3',
         }} role="button" className="boton-redirect-buscador"
         >
             Buscar un Producto <span><i className="fa fa-search"></i></span>

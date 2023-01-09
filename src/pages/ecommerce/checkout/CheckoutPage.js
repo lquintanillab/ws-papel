@@ -4,14 +4,22 @@ import ProductoCheckout from '../../../components/productoCheckout/ProductoCheck
 import StripeCheckoutButton from '../../../components/stripeCheckout/StripeCheckoutButton';
 import {numberFormat} from '../../../helpers/utils'
 import { useHistory } from 'react-router-dom';
+import axios from 'axios';
+
+
+
+import { apiUrl } from '../../../config/axiosInstance';
 
 import './CheckoutPage.css';
 import CheckoutFactura from '../../../components/CheckoutFactura/CheckoutFactura';
 import SelectorDirecciones from '../../../components/SelectorDirecciones/SelectorDirecciones';
 import { db } from '../../../config/firebaseConfig';
+import { pedidoCreate } from '../../../helpers/pedidoHelper';
 
 
 const CheckoutPage = () => {
+    const urlFolio = `${apiUrl.url}next-folio?serie=ECOMMERCE&entidad=PEDIDO`;
+    const urlUpdateFolio = `${apiUrl.url}update-folio?serie=ECOMMERCE&entidad=PEDIDO`;
 
     const pedidoIni = {
         userId: '',
@@ -29,13 +37,14 @@ const CheckoutPage = () => {
         rfc: '',
         usoDeCfdi: '',
         direccionFactura: {},
-        estado: 'PENDIENTE_PAGO'
+        estado: 'PENDIENTE_PAGO',
+        cliente:{}
     }
 
     
 
     const carritoState = useSelector(state=> state.carrito);
-    const profileState = useSelector(state => state.profileState)
+    const profileState = useSelector(state => state.profile)
     const [pedido,setPedido] = useState(pedidoIni)
     const [direccionEnvio, setDireccionEnvio] = useState();
     const [importes, setImportes] = useState({});
@@ -48,11 +57,14 @@ const CheckoutPage = () => {
        if(e.target.value){
          
            setDireccionEnvio(JSON.parse(e.target.value));
+        
            setPedido({
                ...pedido,
                direccionEnvio: JSON.parse(e.target.value),
-               direccionFactura: JSON.parse(e.target.value)
+               direccionFactura: JSON.parse(e.target.value),
             })
+            pedidoCreate(pedido)
+            
        }else{
            setDireccionEnvio(null);
        }
@@ -66,8 +78,14 @@ const CheckoutPage = () => {
     } 
 
     const confirmarPedido = async () => {
-        const docRef = await db.collection('pedidos').add(pedido)
-        const docSnap = await docRef.get()
+        const data = await axios.get(urlFolio)
+        //console.log(data);
+        pedido.folio = data.data[0].folio;
+        const newPedido = JSON.stringify(pedidoCreate(pedido));
+
+        const docRef = await db.collection('pedidos').add(JSON.parse(newPedido))
+        await axios.get(urlUpdateFolio);
+        const docSnap = await docRef.get();
         return docSnap
          /* .catch(error => {
             console.log("Hubo un error al crear el carrito en Firebase!!!");
@@ -80,7 +98,7 @@ const CheckoutPage = () => {
         const validarPedido = async ()=>{
 
             const pedidoFb = await db.collection('pedidos').where("userId","==", carritoState.userId ).where("estado", "==", "PENDIENTE_PAGO").get()
-            console.log("Desde validar pedido");
+            //console.log("Desde validar pedido");
             if(pedidoFb.docs.length > 0){
                 const pedidoSnap = await pedidoFb.docs[0];
                 const pedidoRef = pedidoSnap.ref;
@@ -126,8 +144,8 @@ const CheckoutPage = () => {
                 total: aPagar,
                 direccionEnvio: {}, 
                 factura: false,
-                nombre: '',
-                rfc: '',
+                nombre: profileState.nombre,
+                rfc: profileState.rfc,
                 usoDeCfdi: '',
                 direccionFactura: {},
                 estado: 'PENDIENTE_PAGO'
